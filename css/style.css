@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+:root {
+  --clr-dark-blue: hsl(238, 29%, 16%);
+  --clr-soft-red: hsl(14, 88%, 65%);
+  --clr-soft-violet: hsl(273, 75%, 66%);
+  --clr-soft-blue: hsl(240, 73%, 65%);
+  --clr-dark-grayish: hsl(237, 12%, 33%);
+  --clr-grayish: hsl(240, 6%, 50%);
+  --clr-light-grayish: hsl(240, 5%, 91%);
+  --font-kumbh: "Kumbh Sans", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(var(--clr-soft-violet), var(--clr-soft-blue));
+  font-family: var(--font-kumbh);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 2.4rem;
+}
+
+.accordion {
+  display: grid;
+  max-width: 920px;
+  font-size: 1.2rem;
+  background-color: #fff;
+  border-radius: 2.3rem;
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+@media screen and (min-width: 63em) {
+  .accordion {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 509px;
+  }
+}
+.accordion__img-box {
+  display: none;
+  position: absolute;
+}
+@media screen and (min-width: 63em) {
+  .accordion__img-box {
+    display: block;
+    z-index: 9999;
+    top: 204px;
+    left: -93px;
+  }
+}
+.accordion__imgs-box {
+  height: 130px;
+  position: relative;
+}
+@media screen and (min-width: 63em) {
+  .accordion__imgs-box {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+.accordion__img-pattern {
+  position: absolute;
+}
+.accordion__img-pattern--m {
+  display: block;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (min-width: 63em) {
+  .accordion__img-pattern--m {
+    display: none;
+  }
+}
+.accordion__img-pattern--d {
+  display: none;
+}
+@media screen and (min-width: 63em) {
+  .accordion__img-pattern--d {
+    display: block;
+    top: -295px;
+    left: -577px;
+  }
+}
+.accordion__img-woman {
+  position: absolute;
+}
+.accordion__img-woman--m {
+  width: 236px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+@media screen and (min-width: 63em) {
+  .accordion__img-woman--m {
+    display: none;
+  }
+}
+.accordion__img-woman--d {
+  display: none;
+}
+@media screen and (min-width: 63em) {
+  .accordion__img-woman--d {
+    display: block;
+    top: 70px;
+    left: -84px;
+  }
+}
+.accordion__items {
+  padding: 0 2.4rem 4.8rem;
+}
+@media screen and (min-width: 63em) {
+  .accordion__items {
+    min-width: 460px;
+    align-self: center;
+    padding: 3.2rem 11rem 4.8rem 1.5rem;
+  }
+}
+.accordion__item {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--clr-light-grayish);
+}
+.accordion__title {
+  text-align: center;
+  color: var(--clr-dark-blue);
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 63em) {
+  .accordion__title {
+    text-align: left;
+    margin-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+.accordion__btn {
+  cursor: pointer;
+  color: var(--clr-dark-grayish);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  transition: all 0.3s;
+  font-family: var(--font-kumbh);
+  background-color: #fff;
+  border: 0;
+  outline: none;
+}
+.accordion__btn:hover {
+  color: var(--clr-soft-red);
+}
+.accordion__question {
+  text-align: left;
+}
+@media screen and (min-width: 63em) {
+  .accordion__question {
+    font-size: 1.425rem;
+  }
+}
+.accordion__icon-arrow {
+  transition: all 0.3s;
+}
+.accordion__content {
+  display: none;
+  padding: 1.1rem 2rem 0 0;
+}
+.accordion__content p {
+  width: 259px;
+  color: var(--clr-grayish);
+  line-height: 1.8rem;
+}
+@media screen and (min-width: 63em) {
+  .accordion__content p {
+    width: 315px;
+  }
+}
+
+.active .accordion__content {
+  display: block;
+}
+
+.active .accordion__question {
+  font-weight: 700;
+  color: var(--clr-dark-blue);
+}
+
+.active .accordion__icon-arrow {
+  transform: rotate(180deg);
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+}
+.attribution a {
+  font-weight: 700;
+  color: var(--clr-light-grayish);
+}
